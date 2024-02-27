@@ -20,6 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
         .then((value) => {const HomeScreen()});
   }
 
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
          crossAxisAlignment: CrossAxisAlignment.center,
          children: [
            Image.asset('assets/logo/book_image.png',),
+           const SizedBox(height: 20,),
            Image.asset(Utils.appIcon,),
          ],
        ),
