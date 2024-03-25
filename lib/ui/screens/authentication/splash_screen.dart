@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/screens/home_page.dart';
 import '../../utils/utils.dart';
 
@@ -14,10 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Future.delayed(const Duration(seconds: 1))
-        .then((value) => {const HomeScreen()});
+        .then((value) => {Get.off(const HomeScreen())});
   }
 
 
