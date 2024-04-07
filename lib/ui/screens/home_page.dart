@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ictexpartbd/ui/screens/widget/home_activity_card.dart';
 import '../utils/utils.dart';
+import '../widget/home_activity_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
