@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final ValueNotifier<int> _sliderIndex = ValueNotifier(0);
+  final ValueNotifier<int> _gellaryIndex = ValueNotifier(0);
   List sliderList = [
     'assets/home_page/home_slider1.png',
     'assets/home_page/home_slider2.png'
@@ -74,6 +75,31 @@ class HomeScreen extends StatelessWidget {
                             },
                           );
                         }).toList(),
+                      ),
+                      Positioned(
+                        top: 100,
+                        right: 10,
+                        child: ValueListenableBuilder(
+                          valueListenable: _sliderIndex,
+                          builder: (context, currentIndex, _) => Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              for (int i = 0; i < (sliderList.length); i++)
+                                Padding(
+                                  padding: const EdgeInsets.all(2.0),
+                                  child: Container(
+                                    height: 15,
+                                    width: 15,
+                                    decoration: BoxDecoration(
+                                      color: i == currentIndex ? Colors.deepPurple : Colors.white,
+                                      border: Border.all(color: Colors.grey,width: 2),
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                  ),
+                                )
+                            ],
+                          ),
+                        ),
                       ),
                       Positioned(
                         top: 270,
@@ -166,48 +192,48 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
 
-                  HomeTitle(title_1: 'ভিডিও লেকচার', title_2: 'সব দেখুন',onPressedTitle_2: (){},),
-                  const SizedBox(height: 10,),
+                  // HomeTitle(title_1: 'ভিডিও লেকচার', title_2: 'সব দেখুন',onPressedTitle_2: (){},),
+                  // const SizedBox(height: 10,),
 
                   HomeTitle(title_1: 'গ্যালারী', title_2: 'সব দেখুন',onPressedTitle_2: (){},),
-                  const SizedBox(height: 10,),
-                  // CarouselSlider(
-                  //   options: CarouselOptions(
-                  //       autoPlayInterval: const Duration(seconds: 6),
-                  //       height: 300.0,
-                  //       viewportFraction: 1,
-                  //       autoPlay: true,
-                  //       onPageChanged: (index, _) {
-                  //         _sliderIndex.value = index;
-                  //       }),
-                  //   items: gellaryList.map((slider) {
-                  //     return Builder(
-                  //       builder: (BuildContext context) {
-                  //         return Container(
-                  //           width: MediaQuery.of(context).size.width,
-                  //           margin: const EdgeInsets.symmetric(
-                  //               horizontal: 5.0, vertical: 5.0),
-                  //           decoration: BoxDecoration(
-                  //             image: DecorationImage(
-                  //               fit: BoxFit.cover,
-                  //               image: AssetImage(
-                  //                 slider,
-                  //               ),
-                  //             ),
-                  //             //color: primaryColor,
-                  //
-                  //             borderRadius: BorderRadius.circular(20.0),
-                  //           ),
-                  //           alignment: Alignment.center,
-                  //           // child: Text(
-                  //           //   '${slider['message']}',
-                  //           //   style: const TextStyle(fontSize: 16.0),
-                  //           // ),
-                  //         );
-                  //       },
-                  //     );
-                  //   }).toList(),
-                  // ),
+                 // const SizedBox(height: 10,),
+                  CarouselSlider(
+                    options: CarouselOptions(
+                        autoPlayInterval: const Duration(seconds: 6),
+                        height: 300.0,
+                        viewportFraction: 1,
+                        autoPlay: true,
+                        onPageChanged: (index, _) {
+                          _gellaryIndex.value = index;
+                        }),
+                    items: gellaryList.map((slider) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Container(
+                            width: MediaQuery.of(context).size.width,
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 5.0, vertical: 5.0),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                  slider,
+                                ),
+                              ),
+                              //color: primaryColor,
+
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            alignment: Alignment.center,
+                            // child: Text(
+                            //   '${slider['message']}',
+                            //   style: const TextStyle(fontSize: 16.0),
+                            // ),
+                          );
+                        },
+                      );
+                    }).toList(),
+                  ),
                 ],
               ),
             ),
