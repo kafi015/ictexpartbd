@@ -31,7 +31,7 @@ class HomeElevatedButton extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: titleColor,
               ),

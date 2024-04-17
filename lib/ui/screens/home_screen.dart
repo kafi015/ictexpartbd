@@ -1,10 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/utils/app_colors.dart';
 import '../widget/home/home_title.dart';
 import '../widget/home_activity_card.dart';
 import '../widget/home_elevated_button.dart';
-import '../widget/ict_expart_appbar.dart';
+import '../widget/ict_expert_appbar.dart';
+import '../widget/ict_expert_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -24,6 +26,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerICTExpert(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,31 +79,31 @@ class HomeScreen extends StatelessWidget {
                           );
                         }).toList(),
                       ),
-                      Positioned(
-                        top: 100,
-                        right: 10,
-                        child: ValueListenableBuilder(
-                          valueListenable: _sliderIndex,
-                          builder: (context, currentIndex, _) => Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              for (int i = 0; i < (sliderList.length); i++)
-                                Padding(
-                                  padding: const EdgeInsets.all(2.0),
-                                  child: Container(
-                                    height: 15,
-                                    width: 15,
-                                    decoration: BoxDecoration(
-                                      color: i == currentIndex ? Colors.deepPurple : Colors.white,
-                                      border: Border.all(color: Colors.grey,width: 2),
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                  ),
-                                )
-                            ],
-                          ),
-                        ),
-                      ),
+                      // Positioned(
+                      //   top: 100,
+                      //   right: 10,
+                      //   child: ValueListenableBuilder(
+                      //     valueListenable: _sliderIndex,
+                      //     builder: (context, currentIndex, _) => Column(
+                      //       mainAxisAlignment: MainAxisAlignment.center,
+                      //       children: [
+                      //         for (int i = 0; i < (sliderList.length); i++)
+                      //           Padding(
+                      //             padding: const EdgeInsets.all(2.0),
+                      //             child: Container(
+                      //               height: 15,
+                      //               width: 15,
+                      //               decoration: BoxDecoration(
+                      //                 color: i == currentIndex ? Colors.deepPurple : Colors.white,
+                      //                 border: Border.all(color: Colors.grey,width: 2),
+                      //                 borderRadius: BorderRadius.circular(10.0),
+                      //               ),
+                      //             ),
+                      //           )
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
                       Positioned(
                         top: 270,
                         left: 10,
@@ -193,10 +196,16 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   // HomeTitle(title_1: 'ভিডিও লেকচার', title_2: 'সব দেখুন',onPressedTitle_2: (){},),
-                  // const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
 
-                  HomeTitle(title_1: 'গ্যালারী', title_2: 'সব দেখুন',onPressedTitle_2: (){},),
-                 // const SizedBox(height: 10,),
+                  HomeTitle(
+                    title_1: 'গ্যালারী',
+                    title_2: 'সব দেখুন',
+                    onPressedTitle_2: () {},
+                  ),
+                  // const SizedBox(height: 10,),
                   CarouselSlider(
                     options: CarouselOptions(
                         autoPlayInterval: const Duration(seconds: 6),
@@ -243,5 +252,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

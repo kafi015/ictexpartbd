@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ictexpartbd/ui/screens/home_page.dart';
+import 'package:ictexpartbd/ui/screens/home_screen.dart';
 import '../../utils/utils.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -13,7 +13,21 @@ class ICTExpartAppBar extends StatelessWidget {
     return AppBar(
       backgroundColor: whiteColor,
       elevation: 30,
-      leading: const Icon(Icons.menu),
+      leading: Builder(
+        builder: (BuildContext context) {
+          return IconButton(
+            icon: const Icon(
+              Icons.menu,
+            //  color: Colors.purple,
+              size: 24,
+            ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+          );
+        },
+      ),
       title: Image.asset(Utils.appIcon),
       centerTitle: true,
       actions: const[
