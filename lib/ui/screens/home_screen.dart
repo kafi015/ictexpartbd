@@ -1,10 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/utils/app_colors.dart';
+import '../widget/home/home_elevated_button.dart';
 import '../widget/home/home_title.dart';
-import '../widget/home_activity_card.dart';
-import '../widget/home_elevated_button.dart';
+import '../widget/home/home_activity_card.dart';
 import '../widget/ict_expert_appbar.dart';
 import '../widget/ict_expert_drawer.dart';
 
@@ -15,7 +14,8 @@ class HomeScreen extends StatelessWidget {
   final ValueNotifier<int> _gellaryIndex = ValueNotifier(0);
   List sliderList = [
     'assets/home_page/home_slider1.png',
-    'assets/home_page/home_slider2.png'
+    'assets/home_page/home_slider2.png',
+    'assets/home_page/home_slider3.png'
   ];
 
   List gellaryList = [
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: DrawerICTExpert(),
+      drawer: const DrawerICTExpert(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
