@@ -14,9 +14,9 @@ class AboutCard extends StatelessWidget {
       color: Colors.white,
       child: Container(
         height: 130,
-        width: 180,
+        width: 175,
         padding: const EdgeInsets.symmetric(
-            horizontal: 5.0, vertical: 8.0),
+            vertical: 8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,

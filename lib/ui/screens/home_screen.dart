@@ -12,19 +12,21 @@ class HomeScreen extends StatelessWidget {
 
   final ValueNotifier<int> _sliderIndex = ValueNotifier(0);
   final ValueNotifier<int> _gellaryIndex = ValueNotifier(0);
-  List sliderList = [
-    'assets/home_page/home_slider1.png',
-    'assets/home_page/home_slider2.png',
-    'assets/home_page/home_slider3.png'
-  ];
 
-  List gellaryList = [
-    'assets/home_page/gellary1.png',
-    'assets/home_page/gellary2.png'
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List sliderList = [
+      'assets/home_page/home_slider1.png',
+      'assets/home_page/home_slider2.png',
+      'assets/home_page/home_slider3.png'
+    ];
+
+    List gellaryList = [
+      'assets/home_page/gellary1.png',
+      'assets/home_page/gellary2.png'
+    ];
+
     return Scaffold(
       drawer: const DrawerICTExpert(),
       body: Column(

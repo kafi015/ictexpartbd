@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/screens/about_screen.dart';
 import 'package:ictexpartbd/ui/screens/home_screen.dart';
-import 'package:ictexpartbd/ui/screens/routine_screen.dart';
 
 class DrawerICTExpert extends StatelessWidget {
   const DrawerICTExpert({
