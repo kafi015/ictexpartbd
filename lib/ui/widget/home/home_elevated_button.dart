@@ -36,7 +36,7 @@ class HomeElevatedButton extends StatelessWidget {
                 color: titleColor,
               ),
             ),
-            const SizedBox(width: 5,),
+            const SizedBox(width: 1,),
             Icon(Icons.arrow_forward,color: whiteColor,),
           ],
         ),

@@ -16,7 +16,7 @@ class HomeTitle extends StatelessWidget {
         children: [
           Text(title_1,
             style: const TextStyle(
-              fontSize: 22,
+              fontSize: 18,
               fontWeight: FontWeight.w700,
               color: Color(0xff012970),
             ),
@@ -27,7 +27,7 @@ class HomeTitle extends StatelessWidget {
             child: Row(children: [
               Text(title_2,
                 style: const TextStyle(
-                  fontSize: 21,
+                  fontSize: 17,
                   fontWeight: FontWeight.w600,
                   color: Color(0xff4154F1),
                 ),),

@@ -1,6 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ictexpartbd/ui/screens/all_vedio_screen.dart';
 import 'package:ictexpartbd/ui/utils/app_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../widget/home/home_elevated_button.dart';
 import '../widget/home/home_title.dart';
 import '../widget/home/home_activity_card.dart';
@@ -11,20 +14,23 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
   final ValueNotifier<int> _sliderIndex = ValueNotifier(0);
-  final ValueNotifier<int> _gellaryIndex = ValueNotifier(0);
-
+  final ValueNotifier<int> _galleryIndex = ValueNotifier(0);
+  final Uri _url = Uri.parse('https://www.youtube.com/playlist?list=PLMiZr2T2EejyFHzejoI8_8osHRDKKWmb-');
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
+
     List sliderList = [
-      'assets/home_page/home_slider1.png',
-      'assets/home_page/home_slider2.png',
-      'assets/home_page/home_slider3.png'
+      'assets/home/home_slider1.png',
+      'assets/home/home_slider2.png',
+      'assets/home/home_slider3.png'
     ];
 
-    List gellaryList = [
-      'assets/home_page/gellary1.png',
-      'assets/home_page/gellary2.png'
+    List galleryList = [
+      'assets/home/gallery1.png',
+      'assets/home/gallery2.png'
     ];
 
     return Scaffold(
@@ -47,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                       CarouselSlider(
                         options: CarouselOptions(
                             autoPlayInterval: const Duration(seconds: 6),
-                            height: 300.0,
+                            height: height * 0.38,
                             viewportFraction: 1,
                             autoPlay: true,
                             onPageChanged: (index, _) {
@@ -57,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                           return Builder(
                             builder: (BuildContext context) {
                               return Container(
-                                width: MediaQuery.of(context).size.width,
+                                width: width,
                                 margin: const EdgeInsets.symmetric(
                                     horizontal: 5.0, vertical: 5.0),
                                 decoration: BoxDecoration(
@@ -107,7 +113,7 @@ class HomeScreen extends StatelessWidget {
                       //   ),
                       // ),
                       Positioned(
-                        top: 270,
+                        top: height * 0.34,
                         left: 10,
                         right: 10,
                         child: Row(
@@ -178,12 +184,12 @@ class HomeScreen extends StatelessWidget {
                   Stack(
                     children: [
                       Image.asset(
-                        'assets/home_page/home_leader_board.png',
+                        'assets/home/home_leader_board.png',
                         fit: BoxFit.cover,
                       ),
                       Positioned(
                         top: 75,
-                        left: 108,
+                        left: width * 0.23,
                         child: Padding(
                           padding:
                               const EdgeInsets.symmetric(horizontal: 115.0),
@@ -197,7 +203,46 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
 
-                  // HomeTitle(title_1: 'ভিডিও লেকচার', title_2: 'সব দেখুন',onPressedTitle_2: (){},),
+                   HomeTitle(title_1: 'ভিডিও লেকচার', title_2: 'সব দেখুন',onPressedTitle_2: (){
+                     Get.to(const AllVideoScreen());
+                   },),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  InkWell(
+                    onTap: _launchUrl,
+                    child: SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: width * 0.5,
+                            height: height * 0.2,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/home/ict_c1_utube.png'),
+                              )
+                            ),
+                          ),
+                          Container(
+                            width: width * 0.5,
+                            height: height * 0.2,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/home/ict_c2_utube.png'),
+                              )
+                            ),
+                          ),
+
+                          // Image.asset('assets/home/ict_c1_utube.png',scale: 1.5,),
+                          // Image.asset('assets/home/ict_c2_utube.png',scale: 1.5,),
+                        ],
+                      ),
+                    ),
+                  ),
+
                   const SizedBox(
                     height: 10,
                   ),
@@ -215,9 +260,9 @@ class HomeScreen extends StatelessWidget {
                         viewportFraction: 1,
                         autoPlay: true,
                         onPageChanged: (index, _) {
-                          _gellaryIndex.value = index;
+                          _galleryIndex.value = index;
                         }),
-                    items: gellaryList.map((slider) {
+                    items: galleryList.map((slider) {
                       return Builder(
                         builder: (BuildContext context) {
                           return Container(
@@ -252,5 +297,11 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
   }
 }

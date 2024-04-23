@@ -9,6 +9,7 @@ void main()
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  static GlobalKey<NavigatorState> globalKey = GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
