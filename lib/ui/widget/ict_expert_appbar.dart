@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ictexpartbd/ui/screens/notification_screen.dart';
 
 import '../utils/app_colors.dart';
 import '../utils/utils.dart';
@@ -30,10 +32,15 @@ class ICTExpartAppBar extends StatelessWidget {
       ),
       title: Image.asset(Utils.appIcon),
       centerTitle: true,
-      actions: const[
-        Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Icon(Icons.notifications),
+      actions: [
+        InkWell(
+          onTap: (){
+            Get.to(const NotificationScreen());
+          },
+          child: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(Icons.notifications),
+          ),
         )
       ],
     );

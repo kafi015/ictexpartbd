@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/screens/about_screen.dart';
 import 'package:ictexpartbd/ui/screens/home_screen.dart';
 
+import '../screens/routine_screen.dart';
+
 class DrawerICTExpert extends StatelessWidget {
   const DrawerICTExpert({
     super.key,
@@ -46,12 +48,12 @@ class DrawerICTExpert extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          // DrawerItem(
-          //     onTap: () {
-          //       Get.to(const RoutineScreen());
-          //     },
-          //     title: 'রুটিন',
-          //     icon: 'assets/drawer/routine_icon.png'),
+          DrawerItem(
+              onTap: () {
+                Get.to(const RoutineScreen());
+              },
+              title: 'রুটিন',
+              icon: 'assets/drawer/routine_icon.png'),
           // DrawerItem(
           //     onTap: () {},
           //     title: 'এক্সপার্ট ব্লগ',

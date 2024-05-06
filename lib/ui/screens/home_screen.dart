@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ictexpartbd/ui/screens/all_vedio_screen.dart';
 import 'package:ictexpartbd/ui/utils/app_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widget/home/home_elevated_button.dart';
@@ -9,6 +8,7 @@ import '../widget/home/home_title.dart';
 import '../widget/home/home_activity_card.dart';
 import '../widget/ict_expert_appbar.dart';
 import '../widget/ict_expert_drawer.dart';
+import 'all_vedio_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
