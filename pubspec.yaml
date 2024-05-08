@@ -75,6 +75,9 @@ flutter:
      - assets/home/
      - assets/drawer/
      - assets/all_video_lecture/
+     - assets/lecture_page/
+     - assets/lecture_note/
+     - assets/math_problem/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

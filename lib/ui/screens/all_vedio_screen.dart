@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ictexpartbd/ui/screens/lecture_page_screen.dart';
 import 'package:ictexpartbd/ui/screens/video_play_screen.dart';
 
 class AllVideoScreen extends StatelessWidget {

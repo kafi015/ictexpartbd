@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ictexpartbd/ui/screens/lecture_note_screen.dart';
+import 'package:ictexpartbd/ui/screens/quiz_page_screen.dart';
 import 'package:ictexpartbd/ui/utils/app_colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widget/home/home_elevated_button.dart';
@@ -123,7 +125,11 @@ class HomeScreen extends StatelessWidget {
                               title: 'বইটি পড়ে দেখো',
                               titleColor: whiteColor,
                               backgroundColor: const Color(0xff4154F1),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                  return LectureNoteScreen();
+                                }));
+                              },
                             ),
                             const SizedBox(
                               width: 10,
@@ -132,7 +138,11 @@ class HomeScreen extends StatelessWidget {
                               title: 'কুইজে অংশ নাও',
                               titleColor: whiteColor,
                               backgroundColor: const Color(0xff012970),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                  return QuizPageScreen();
+                                }));
+                              },
                             ),
                           ],
                         ),
@@ -197,7 +207,8 @@ class HomeScreen extends StatelessWidget {
                               title: 'কুইজে অংশ নাও',
                               titleColor: whiteColor,
                               backgroundColor: const Color(0xff012970),
-                              onPressed: () {}),
+                              onPressed: () {}
+                          ),
                         ),
                       ),
                     ],
