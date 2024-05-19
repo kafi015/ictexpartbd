@@ -39,6 +39,7 @@ dependencies:
   percent_indicator: ^4.0.1
   carousel_slider: ^4.2.1
   url_launcher: ^6.2.6
+  http: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -75,9 +76,11 @@ flutter:
      - assets/home/
      - assets/drawer/
      - assets/all_video_lecture/
-     - assets/lecture_page/
+     - assets/quiz_page/
      - assets/lecture_note/
+     - assets/lecture_page/
      - assets/math_problem/
+     - assets/routine/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

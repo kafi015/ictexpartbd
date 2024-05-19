@@ -199,7 +199,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Positioned(
                         top: 75,
-                        left: width * 0.23,
+                        left: width * 0.3,
                         child: Padding(
                           padding:
                               const EdgeInsets.symmetric(horizontal: 115.0),
@@ -207,7 +207,9 @@ class HomeScreen extends StatelessWidget {
                               title: 'কুইজে অংশ নাও',
                               titleColor: whiteColor,
                               backgroundColor: const Color(0xff012970),
-                              onPressed: () {}
+                              onPressed: () {
+                                Get.to(QuizPageScreen());
+                              }
                           ),
                         ),
                       ),

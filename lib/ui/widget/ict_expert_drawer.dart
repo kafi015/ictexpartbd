@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/screens/about_screen.dart';
 import 'package:ictexpartbd/ui/screens/home_screen.dart';
+import 'package:ictexpartbd/ui/screens/math_problem_screen.dart';
+import 'package:ictexpartbd/ui/screens/profile_home_screen.dart';
 
 import '../screens/routine_screen.dart';
 
@@ -50,14 +52,22 @@ class DrawerICTExpert extends StatelessWidget {
           ),
           DrawerItem(
               onTap: () {
+                Get.to(const ProfileHomeScreen());
+              },
+              title: 'প্রোফাইল',
+              icon: 'assets/drawer/profile_icon.png'),
+          DrawerItem(
+              onTap: () {
                 Get.to(const RoutineScreen());
               },
               title: 'রুটিন',
               icon: 'assets/drawer/routine_icon.png'),
-          // DrawerItem(
-          //     onTap: () {},
-          //     title: 'এক্সপার্ট ব্লগ',
-          //     icon: 'assets/drawer/blog_icon.png'),
+          DrawerItem(
+              onTap: () {
+                Get.to(MathProblemScreen());
+              },
+              title: 'ম্যাথ প্রবলেম',
+              icon: 'assets/drawer/blog_icon.png'),
           DrawerItem(
               onTap: () {
                 Get.back();

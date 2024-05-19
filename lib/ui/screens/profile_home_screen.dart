@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ictexpartbd/ui/screens/profile_personal_screen.dart';
+import 'package:ictexpartbd/ui/widget/ict_expert_appbar.dart';
+import 'package:ictexpartbd/ui/widget/ict_expert_drawer.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class ProfileHomeScreen extends StatelessWidget {
@@ -7,11 +11,12 @@ class ProfileHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      drawer: DrawerICTExpert(),
       body: SingleChildScrollView(
     child: Column(
     crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        const ICTExpartAppBar(),
         const SizedBox(height: 24),
         const Row(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +75,9 @@ class ProfileHomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 36),
-            TextButton(onPressed: () {},
+            TextButton(onPressed: () {
+              Get.to(ProfilePersonalScreen());
+            },
               child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

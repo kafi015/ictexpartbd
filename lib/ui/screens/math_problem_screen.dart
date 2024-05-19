@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ictexpartbd/ui/widget/ict_expert_appbar.dart';
+import 'package:ictexpartbd/ui/widget/ict_expert_drawer.dart';
 
 class MathProblemScreen extends StatelessWidget {
   const MathProblemScreen({super.key});
@@ -16,19 +18,27 @@ class MathProblemScreen extends StatelessWidget {
 
     return Scaffold(
 
-      body: ListView.builder(
-          itemCount: math_page_list.length,
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-              },
-              child: Padding(
-                // padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-                padding: const EdgeInsets.all(8),
-                child: Image.asset(math_page_list[index]),
-              ),
-            );
-          }),
+      drawer: DrawerICTExpert(),
+      body: Column(
+        children: [
+          const ICTExpartAppBar(),
+          Expanded(
+            child: ListView.builder(
+                itemCount: math_page_list.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                    },
+                    child: Padding(
+                      // padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+                      padding: const EdgeInsets.all(8),
+                      child: Image.asset(math_page_list[index]),
+                    ),
+                  );
+                }),
+          ),
+        ],
+      ),
     );
   }
 }
