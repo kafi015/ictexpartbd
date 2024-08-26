@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide CarouselController;
 import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/screens/authentication/splash_screen.dart';
 import 'package:ictexpartbd/ui/state_manager/home_controller.dart';
+import 'package:ictexpartbd/ui/state_manager/log_in_controller.dart';
 
 void main()
 {
@@ -15,17 +16,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialBinding: GetxBinding(),
+      initialBinding: GetXBinding(),
       debugShowCheckedModeBanner: false,
       home:const SplashScreen(),
-
     );
   }
 }
-class GetxBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.put(HomeController());
 
+
+class GetXBinding extends Bindings {
+  @override
+  void dependencies(){
+    Get.put(HomeController());
+    Get.put(LogInController());
   }
 }

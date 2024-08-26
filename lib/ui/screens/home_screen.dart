@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider_plus/carousel_slider_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ictexpartbd/ui/screens/lecture_note_screen.dart';
@@ -89,31 +89,6 @@ class HomeScreen extends StatelessWidget {
                           );
                         }).toList(),
                       ),
-                      // Positioned(
-                      //   top: 100,
-                      //   right: 10,
-                      //   child: ValueListenableBuilder(
-                      //     valueListenable: _sliderIndex,
-                      //     builder: (context, currentIndex, _) => Column(
-                      //       mainAxisAlignment: MainAxisAlignment.center,
-                      //       children: [
-                      //         for (int i = 0; i < (sliderList.length); i++)
-                      //           Padding(
-                      //             padding: const EdgeInsets.all(2.0),
-                      //             child: Container(
-                      //               height: 15,
-                      //               width: 15,
-                      //               decoration: BoxDecoration(
-                      //                 color: i == currentIndex ? Colors.deepPurple : Colors.white,
-                      //                 border: Border.all(color: Colors.grey,width: 2),
-                      //                 borderRadius: BorderRadius.circular(10.0),
-                      //               ),
-                      //             ),
-                      //           )
-                      //       ],
-                      //     ),
-                      //   ),
-                      // ),
                       Positioned(
                         top: height * 0.34,
                         left: 10,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ictexpartbd/ui/screens/authentication/log_in_screen.dart';
 import 'package:ictexpartbd/ui/screens/home_screen.dart';
 import 'package:ictexpartbd/ui/state_manager/home_controller.dart';
 import '../../utils/utils.dart';
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(const Duration(seconds: 1))
         .then((value) => {
           Get.find<HomeController>().getStudentReview(),
-          Get.off(HomeScreen()
+          Get.off(LogInScreen()
           )});
   }
 
@@ -37,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
               height: 20,
             ),
             Image.asset(
-              Utils.appIcon,
+              appIcon,
             ),
           ],
         ),

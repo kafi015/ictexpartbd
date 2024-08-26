@@ -30,7 +30,7 @@ class ICTExpartAppBar extends StatelessWidget {
           );
         },
       ),
-      title: Image.asset(Utils.appIcon),
+      title: Image.asset(appIcon),
       centerTitle: true,
       actions: [
         InkWell(
